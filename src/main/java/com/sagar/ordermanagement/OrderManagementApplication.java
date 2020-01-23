@@ -1,4 +1,4 @@
-package com.sagar.poc1;
+package com.sagar.ordermanagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
