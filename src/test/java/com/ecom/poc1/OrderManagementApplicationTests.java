@@ -1,4 +1,4 @@
-package com.sagar.poc1;
+package com.ecom.poc1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
