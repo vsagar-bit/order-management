@@ -4,14 +4,16 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class ProductType {
+public class Rating {
 
     @Id
     private Long id;
 
     private String name;
 
-    private String description;
+    private String image;
+
+    private String Description;
 
     public Long getId() {
         return id;
@@ -29,11 +31,19 @@ public class ProductType {
         this.name = name;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        Description = description;
     }
 }
