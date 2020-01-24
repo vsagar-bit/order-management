@@ -1,5 +1,6 @@
 package com.ecom.ordermanagement.controller;
 
+import com.ecom.ordermanagement.model.City;
 import com.ecom.ordermanagement.model.Country;
 import com.ecom.ordermanagement.model.State;
 import com.ecom.ordermanagement.service.AddressService;
@@ -44,5 +45,15 @@ public class AddressController {
     @GetMapping("/stateList")
     public Flux<State> getStateList() {
         return  addressService.stateList();
+    }
+
+    @PostMapping("/addCity")
+    public Mono<City> addCity(@RequestBody City city) {
+        return addressService.addCity(city);
+    }
+
+    @GetMapping("listCities")
+    public Flux<City> listCities() {
+        return addressService.listCities();
     }
 }

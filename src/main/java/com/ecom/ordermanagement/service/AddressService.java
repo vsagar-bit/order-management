@@ -1,5 +1,6 @@
 package com.ecom.ordermanagement.service;
 
+import com.ecom.ordermanagement.model.City;
 import com.ecom.ordermanagement.model.Country;
 import com.ecom.ordermanagement.model.State;
 import org.springframework.http.ResponseEntity;
@@ -15,4 +16,8 @@ public interface AddressService {
     Mono<State> addState(State state);
 
     Flux<State> stateList();
+
+    Mono<City> addCity(City city);
+
+    Flux<City> listCities();
 }

@@ -1,8 +1,10 @@
 package com.ecom.ordermanagement.service;
 
+import com.ecom.ordermanagement.model.City;
 import com.ecom.ordermanagement.model.Country;
 import com.ecom.ordermanagement.model.State;
 import com.ecom.ordermanagement.repository.AddressRepository;
+import com.ecom.ordermanagement.repository.CityRepository;
 import com.ecom.ordermanagement.repository.CountryRepository;
 import com.ecom.ordermanagement.repository.StateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class AddressServiceImpl implements AddressService {
 
     @Autowired
     StateRepository stateRepository;
+
+    @Autowired
+    CityRepository cityRepository;
 
     @Override
     public Mono<Country> createCountry(Country country) {
@@ -48,5 +53,15 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public Flux<State> stateList() {
         return stateRepository.findAll();
+    }
+
+    @Override
+    public Mono<City> addCity(City city) {
+        return cityRepository.save(city);
+    }
+
+    @Override
+    public Flux<City> listCities() {
+        return cityRepository.findAll();
     }
 }
