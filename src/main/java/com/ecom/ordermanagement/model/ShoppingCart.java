@@ -3,7 +3,6 @@ package com.ecom.ordermanagement.model;
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;
-import java.util.List;
 
 public class ShoppingCart {
 
@@ -11,8 +10,10 @@ public class ShoppingCart {
     private long id;
     private String sessionId;
     private Date date;
-    private List<Product> products;
-
+    private long productId;
+    private int quantity;
+    private double price;
+    private boolean active;
 
     public long getId() {
         return id;
@@ -38,12 +39,36 @@ public class ShoppingCart {
         this.date = date;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public long getProductId() {
+        return productId;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setProductId(long productId) {
+        this.productId = productId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     @Override
@@ -52,7 +77,10 @@ public class ShoppingCart {
                 "id=" + id +
                 ", sessionId='" + sessionId + '\'' +
                 ", date=" + date +
-                ", products=" + products +
+                ", productId=" + productId +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", active=" + active +
                 '}';
     }
 }

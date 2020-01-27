@@ -1,41 +1,32 @@
 package com.ecom.ordermanagement.model;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
 
 @Document
 public class OrderDetails {
 
-    @Id
-    private long id;
-    private List<Order> orders;
-    private List<Product> products;
+    private long orderId;
+    private long productId;
     private long productPrice;
+    private int quantity;
+    private int discount;
+    private boolean active;
 
-    public long getId() {
-        return id;
+    public long getOrderId() {
+        return orderId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setOrderId(long orderId) {
+        this.orderId = orderId;
     }
 
-    public List<Order> getOrders() {
-        return orders;
+    public long getProductId() {
+        return productId;
     }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setProductId(long productId) {
+        this.productId = productId;
     }
 
     public long getProductPrice() {
@@ -46,13 +37,39 @@ public class OrderDetails {
         this.productPrice = productPrice;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(int discount) {
+        this.discount = discount;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     @Override
     public String toString() {
         return "OrderDetails{" +
-                "id=" + id +
-                ", orders=" + orders +
-                ", products=" + products +
+                "orderId=" + orderId +
+                ", productId=" + productId +
                 ", productPrice=" + productPrice +
+                ", quantity=" + quantity +
+                ", discount=" + discount +
+                ", active=" + active +
                 '}';
     }
 }
