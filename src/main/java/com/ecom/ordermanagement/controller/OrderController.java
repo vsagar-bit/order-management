@@ -30,9 +30,9 @@ public class OrderController {
     }
 
 
-    @PostMapping("/productToCard")
+    @PostMapping("/productToCart")
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<ShoppingCart> addProductToShoppingCard(@RequestBody ShoppingCart shoppingCart) {
+    public Mono<ShoppingCart> addProductToShoppingCart(@RequestBody ShoppingCart shoppingCart) {
         return orderService.addProductToShippingCart(shoppingCart);
     }
 
