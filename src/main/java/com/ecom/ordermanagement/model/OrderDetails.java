@@ -1,11 +1,13 @@
 package com.ecom.ordermanagement.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document
 public class OrderDetails {
 
+    @Id
     private long orderId;
     private long productId;
     private long productPrice;

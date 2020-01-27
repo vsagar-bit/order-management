@@ -7,7 +7,7 @@ import java.util.Date;
 public class ShoppingCart {
 
     @Id
-    private long id;
+    private long orderId;
     private String sessionId;
     private Date date;
     private long productId;
@@ -15,12 +15,12 @@ public class ShoppingCart {
     private double price;
     private boolean active;
 
-    public long getId() {
-        return id;
+    public long getOrderId() {
+        return orderId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setOrderId(long orderId) {
+        this.orderId = orderId;
     }
 
     public String getSessionId() {
@@ -74,7 +74,7 @@ public class ShoppingCart {
     @Override
     public String toString() {
         return "ShoppingCart{" +
-                "id=" + id +
+                "id=" + orderId +
                 ", sessionId='" + sessionId + '\'' +
                 ", date=" + date +
                 ", productId=" + productId +
