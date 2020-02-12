@@ -63,5 +63,6 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public Flux<City> listCities() {
         return cityRepository.findAll();
+        
     }
 }
